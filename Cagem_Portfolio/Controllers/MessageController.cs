@@ -28,5 +28,6 @@ namespace Cagem_Portfolio.Controllers
             var value = db.TblMessage.Find(id);
             return View(value);
         }
+        
     }
 }
