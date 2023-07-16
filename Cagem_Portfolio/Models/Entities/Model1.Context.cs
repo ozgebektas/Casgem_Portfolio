@@ -36,5 +36,7 @@ namespace Cagem_Portfolio.Models.Entities
         public virtual DbSet<TblEmployee> TblEmployee { get; set; }
         public virtual DbSet<TblAdmin> TblAdmin { get; set; }
         public virtual DbSet<TblContact> TblContact { get; set; }
+        public virtual DbSet<TBLAboutsMe> TBLAboutsMe { get; set; }
+        public virtual DbSet<TBLVideo> TBLVideo { get; set; }
     }
 }

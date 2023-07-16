@@ -14,9 +14,10 @@ namespace Cagem_Portfolio.Controllers
         // GET: Portfolio
         public ActionResult Index()
         {
-          /*  ArrayList xvalue=new ArrayList();
-            var values = db.TblDepartment.ToList();
-            values.ToList().ForEach(x=>xvalue.Add(x.DepartmentName));*/
+            /*  ArrayList xvalue=new ArrayList();
+              var values = db.TblDepartment.ToList();
+              values.ToList().ForEach(x=>xvalue.Add(x.DepartmentName));*/
+            ViewBag.description = db.TBLAboutsMe.Select(x => x.Description).FirstOrDefault();
             return View();
         }
         public PartialViewResult PartialHead()
@@ -29,6 +30,7 @@ namespace Cagem_Portfolio.Controllers
         }
         public PartialViewResult PartialFeature()
         {
+            
             ViewBag.featureTitle=db.TblFeature.Select(x=>x.FeatureTitle).FirstOrDefault();
             ViewBag.featureDescription=db.TblFeature.Select(x=>x.FeatureDescription).FirstOrDefault();
             ViewBag.featureImageURL=db.TblFeature.Select(x=>x.FeatureImageURL).FirstOrDefault();
@@ -56,6 +58,7 @@ namespace Cagem_Portfolio.Controllers
             string fileName = "Ozgebektas.pdf";
             return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, fileName);
         }
+    
 
     }
 }

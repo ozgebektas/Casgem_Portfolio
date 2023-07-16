@@ -35,5 +35,10 @@ namespace Cagem_Portfolio.Controllers
             }
        
         }
+        public ActionResult LogOut()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index", "Login");
+        }
     }
 }
